@@ -1,0 +1,359 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" width="1280" height="360">
+  <defs>
+    <!-- Gradientes profundos dark theme - Azul bancário / Ouro -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#020617"/>
+      <stop offset="30%" style="stop-color:#0c152d"/>
+      <stop offset="60%" style="stop-color:#0a1628"/>
+      <stop offset="100%" style="stop-color:#030712"/>
+    </linearGradient>
+
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0ea5e9"/>
+      <stop offset="50%" style="stop-color:#0284c7"/>
+      <stop offset="100%" style="stop-color:#0369a1"/>
+    </linearGradient>
+
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#fbbf24"/>
+      <stop offset="50%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+
+    <linearGradient id="emeraldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="50%" style="stop-color:#059669"/>
+      <stop offset="100%" style="stop-color:#047857"/>
+    </linearGradient>
+
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="30%" style="stop-color:#e0f2fe"/>
+      <stop offset="60%" style="stop-color:#bae6fd"/>
+      <stop offset="100%" style="stop-color:#7dd3fc"/>
+    </textGradient>
+
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0ea5e9"/>
+      <stop offset="50%" style="stop-color:#fbbf24"/>
+      <stop offset="100%" style="stop-color:#10b981"/>
+    </linearGradient>
+
+    <linearGradient id="vaultGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b" stop-opacity="0.8"/>
+      <stop offset="50%" style="stop-color:#0f172a" stop-opacity="0.9"/>
+      <stop offset="100%" style="stop-color:#020617" stop-opacity="1"/>
+    </linearGradient>
+
+    <!-- Glow filters -->
+    <filter id="glowStrong" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="glowSoft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="textGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#0ea5e9" flood-opacity="0.9" result="glowColor"/>
+      <feComposite in="glowColor" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="dropShadow3D" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="6" dy="10" stdDeviation="8" flood-color="#000000" flood-opacity="0.7"/>
+    </filter>
+
+    <!-- Grid isométrico -->
+    <pattern id="isoGrid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M25,0 L50,17.5 L50,52.5 L25,70 L0,52.5 L0,17.5 Z" fill="none" stroke="url(#primaryGradient)" stroke-width="0.3" opacity="0.12"/>
+    </pattern>
+
+    <!-- Circuit pattern -->
+    <pattern id="circuitPattern" width="80" height="80" patternUnits="userSpaceOnUse">
+      <rect x="0" y="40" width="80" height="1" fill="url(#primaryGradient)" opacity="0.05"/>
+      <rect x="40" y="0" width="1" height="80" fill="url(#goldGradient)" opacity="0.05"/>
+      <circle cx="40" cy="40" r="8" fill="none" stroke="url(#primaryGradient)" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+
+    <!-- Hex pattern -->
+    <pattern id="hexPattern" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M30,0 L54,17.3 L54,60 L30,77.3 L6,60 L6,17.3 Z" fill="none" stroke="url(#goldGradient)" stroke-width="0.3" opacity="0.08"/>
+    </pattern>
+
+    <!-- Noise texture -->
+    <filter id="noise" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.03 0" in="noise" result="noiseAlpha"/>
+    </filter>
+
+    <clipPath id="textClip">
+      <rect x="0" y="0" width="1280" height="360"/>
+    </clipPath>
+
+    <!-- Marker para setas -->
+    <marker id="arrowHead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="url(#accentGradient)"/>
+    </marker>
+
+    <!-- Marker para setas gold -->
+    <marker id="arrowHeadGold" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="url(#goldGradient)"/>
+    </marker>
+  </defs>
+
+  <!-- Background base -->
+  <rect width="1280" height="360" fill="url(#bgGradient)"/>
+
+  <!-- Noise overlay -->
+  <rect width="1280" height="360" filter="url(#noise)" opacity="0.02"/>
+
+  <!-- Camadas de padrão -->
+  <g opacity="0.35">
+    <rect width="1280" height="360" fill="url(#isoGrid)"/>
+    <rect width="1280" height="360" fill="url(#circuitPattern)"/>
+    <rect width="1280" height="360" fill="url(#hexPattern)"/>
+  </g>
+
+  <!-- Elementos 3D isométricos - Cofre/Banco, Ledger, Terminal -->
+  <g filter="url(#dropShadow3D)">
+    <!-- Cofre/Banco (Esquerda) - Azul/Bancário -->
+    <g transform="translate(100, 200)">
+      <!-- Base do cofre -->
+      <polygon points="0,25 30,0 70,25 40,55" fill="url(#vaultGradient)" stroke="url(#primaryGradient)" stroke-width="2" opacity="0.9"/>
+      <polygon points="30,0 70,25 40,55 0,30" fill="url(#vaultGradient)" stroke="url(#primaryGradient)" stroke-width="1.5" opacity="0.7"/>
+      <polygon points="0,25 40,55 0,80 -40,55" fill="url(#vaultGradient)" stroke="url(#primaryGradient)" stroke-width="1.5" opacity="0.6"/>
+
+      <!-- Porta do cofre -->
+      <ellipse cx="35" cy="28" rx="22" ry="18" fill="#020617" stroke="url(#goldGradient)" stroke-width="2" opacity="0.9"/>
+      <ellipse cx="35" cy="28" rx="16" ry="12" fill="none" stroke="url(#goldGradient)" stroke-width="1" opacity="0.6"/>
+      <!-- Maçaneta -->
+      <circle cx="48" cy="28" r="4" fill="url(#goldGradient)">
+        <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Engrenagens da fechadura -->
+      <g transform="translate(35, 28)" opacity="0.7">
+        <circle cx="0" cy="0" r="10" fill="none" stroke="url(#primaryGradient)" stroke-width="1" stroke-dasharray="3,3">
+          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="4s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="0" cy="0" r="6" fill="none" stroke="url(#goldGradient)" stroke-width="1">
+          <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="3s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+
+      <text x="35" y="95" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="10" fill="#7dd3fc" text-anchor="middle">Core Banking</text>
+    </g>
+
+    <!-- Ledger/Bloco de Notas (Centro) - Ouro/Verde -->
+    <g transform="translate(555, 140)" filter="url(#glowStrong)">
+      <!-- Bloco de notas isométrico -->
+      <polygon points="0,30 30,0 90,30 60,60" fill="#0f172a" stroke="url(#goldGradient)" stroke-width="2.5" opacity="0.95"/>
+      <polygon points="30,0 90,30 60,60 0,30" fill="#0a1628" stroke="url(#goldGradient)" stroke-width="2" opacity="0.85"/>
+      <polygon points="0,30 60,60 0,90 -60,60" fill="#0f172a" stroke="url(#goldGradient)" stroke-width="2" opacity="0.75"/>
+
+      <!-- Linhas do ledger -->
+      <g transform="translate(15, -15)" opacity="0.9">
+        <line x1="0" y1="8" x2="60" y2="8" stroke="url(#emeraldGradient)" stroke-width="1.5">
+          <animate attributeName="stroke-dashoffset" values="0;20" dur="2s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="20" x2="55" y2="20" stroke="url(#primaryGradient)" stroke-width="1" stroke-dasharray="4,4"/>
+        <line x1="0" y1="32" x2="65" y2="32" stroke="url(#goldGradient)" stroke-width="1.5"/>
+        <line x1="0" y1="44" x2="50" y2="44" stroke="url(#emeraldGradient)" stroke-width="1" stroke-dasharray="3,6"/>
+        <line x1="0" y1="56" x2="58" y2="56" stroke="url(#primaryGradient)" stroke-width="1.5"/>
+      </g>
+
+      <!-- Protocolo UUID animado -->
+      <text x="45" y="85" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="9" fill="#fbbf24" text-anchor="middle">
+        <tspan id="proto1">4F8A</tspan><tspan id="proto2">1C9E</tspan>
+      </text>
+      <animate xlink:href="#proto1" attributeName="fill" values="#fbbf24;#10b981;#fbbf24" dur="2s" repeatCount="indefinite"/>
+      <animate xlink:href="#proto2" attributeName="fill" values="#10b981;#0ea5e9;#10b981" dur="2s" repeatCount="indefinite"/>
+
+      <text x="45" y="115" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="10" fill="#86efac" text-anchor="middle">Ledger Imutável</text>
+    </g>
+
+    <!-- Terminal CLI (Direita) - Verde/Terminal -->
+    <g transform="translate(1000, 200)">
+      <!-- Monitor isométrico -->
+      <polygon points="0,20 40,0 80,20 40,40" fill="#0a1628" stroke="url(#emeraldGradient)" stroke-width="2" opacity="0.9"/>
+      <polygon points="40,0 80,20 40,40 0,20" fill="#051222" stroke="url(#emeraldGradient)" stroke-width="1.5" opacity="0.8"/>
+      <polygon points="0,20 40,40 0,60 -40,40" fill="#0a1628" stroke="url(#emeraldGradient)" stroke-width="1.5" opacity="0.7"/>
+
+      <!-- Tela do terminal -->
+      <g transform="translate(-30, -12)" opacity="0.95">
+        <rect x="0" y="0" width="60" height="30" rx="2" fill="#020617" stroke="url(#emeraldGradient)" stroke-width="1"/>
+        <!-- Cursor piscando -->
+        <rect x="6" y="4" width="8" height="14" fill="#10b981" opacity="0.9">
+          <animate attributeName="opacity" values="0.9;0;0.9" dur="1s" repeatCount="indefinite"/>
+        </rect>
+        <text x="16" y="16" font-family="'JetBrains Mono', monospace" font-weight="500" font-size="8" fill="#10b981">python main.py</text>
+        <text x="6" y="28" font-family="'JetBrains Mono', monospace" font-weight="400" font-size="7" fill="#7dd3fc">Saldo: R$ 1.250,00</text>
+      </g>
+
+      <!-- Base do monitor -->
+      <rect x="25" y="40" width="30" height="8" rx="2" fill="#1e293b" stroke="url(#emeraldGradient)" stroke-width="1"/>
+      <rect x="30" y="48" width="20" height="4" rx="2" fill="#0a1628"/>
+
+      <text x="40" y="95" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="10" fill="#5eead4" text-anchor="middle">CLI Resiliente</text>
+    </g>
+  </g>
+
+  <!-- Partículas flutuantes globais -->
+  <g opacity="0.5">
+    <circle cx="180" cy="50" r="2.5" fill="url(#primaryGradient)">
+      <animate attributeName="cy" values="50;30;50" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="350" cy="60" r="1.5" fill="url(#goldGradient)">
+      <animate attributeName="cy" values="60;40;60" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="850" cy="40" r="2" fill="url(#emeraldGradient)">
+      <animate attributeName="cy" values="40;20;40" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.9;0.3" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1100" cy="80" r="1.5" fill="url(#primaryGradient)">
+      <animate attributeName="cy" values="80;60;80" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0.7;0.2" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="150" cy="320" r="1.5" fill="url(#goldGradient)">
+      <animate attributeName="cy" values="320;300;320" dur="4.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0.9;0.2" dur="4.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1130" cy="300" r="2" fill="url(#emeraldGradient)">
+      <animate attributeName="cy" values="300;280;300" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Linhas de conexão de dados entre componentes -->
+  <g stroke="url(#accentGradient)" stroke-width="1.5" opacity="0.25" filter="url(#glowSoft)" stroke-dasharray="10,6">
+    <path d="M170,225 Q360,160 555,170" fill="none" marker-end="url(#arrowHead)">
+      <animate attributeName="stroke-dashoffset" values="0;32" dur="2.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M645,170 Q820,200 1000,220" fill="none" marker-end="url(#arrowHeadGold)">
+      <animate attributeName="stroke-dashoffset" values="16;48" dur="2.5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Texto Principal - SISTEMA BANCÁRIO -->
+  <g transform="translate(180, 95)" filter="url(#textGlow)">
+    <text x="0" y="0" font-family="'Segoe UI', 'SF Pro Display', 'Roboto', sans-serif"
+          font-weight="900" font-size="56" letter-spacing="-1" fill="url(#textGradient)"
+          clip-path="url(#textClip)">
+      SISTEMA BANCÁRIO
+    </text>
+  </g>
+
+  <!-- Subtítulo PYTHON -->
+  <g transform="translate(180, 160)" filter="url(#glowSoft)">
+    <text x="0" y="0" font-family="'Segoe UI', 'SF Pro Display', 'Roboto', sans-serif"
+          font-weight="600" font-size="22" letter-spacing="5" fill="url(#goldGradient)"
+          clip-path="url(#textClip)">
+      CORE BANKING PYTHON
+    </text>
+  </g>
+
+  <!-- Tagline -->
+  <g transform="translate(180, 195)" opacity="0.85">
+    <text x="0" y="0" font-family="'Segoe UI', 'SF Pro Display', 'Roboto', sans-serif"
+          font-weight="400" font-size="15" letter-spacing="0.5" fill="#7dd3fc"
+          clip-path="url(#textClip)">
+      Clean Architecture • Decimal Precision • Immutable Ledger • Banking Compliance • Zero Dependencies
+    </text>
+  </g>
+
+  <!-- Badges inline no banner -->
+  <g transform="translate(180, 235)">
+    <!-- Badge Python -->
+    <g filter="url(#glowSoft)">
+      <rect x="0" y="0" width="125" height="30" rx="15" fill="#0f172a" stroke="#0ea5e9" stroke-width="1.5" opacity="0.95"/>
+      <text x="62.5" y="20" font-family="'JetBrains Mono', 'Fira Code', monospace"
+            font-weight="600" font-size="12" fill="#0ea5e9" text-anchor="middle">Python 3.10+</text>
+    </g>
+    <!-- Badge Clean Arch -->
+    <g transform="translate(135, 0)" filter="url(#glowSoft)">
+      <rect x="0" y="0" width="140" height="30" rx="15" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5" opacity="0.95"/>
+      <text x="70" y="20" font-family="'JetBrains Mono', 'Fira Code', monospace"
+            font-weight="600" font-size="11" fill="#fbbf24" text-anchor="middle">Clean Architecture</text>
+    </g>
+    <!-- Badge Decimal -->
+    <g transform="translate(285, 0)" filter="url(#glowSoft)">
+      <rect x="0" y="0" width="135" height="30" rx="15" fill="#0f172a" stroke="#10b981" stroke-width="1.5" opacity="0.95"/>
+      <text x="67.5" y="20" font-family="'JetBrains Mono', 'Fira Code', monospace"
+            font-weight="600" font-size="11" fill="#10b981" text-anchor="middle">Decimal ROUND_HALF_UP</text>
+    </g>
+    <!-- Badge Immutable Ledger -->
+    <g transform="translate(430, 0)" filter="url(#glowSoft)">
+      <rect x="0" y="0" width="150" height="30" rx="15" fill="#0f172a" stroke="#a855f7" stroke-width="1.5" opacity="0.95"/>
+      <text x="75" y="20" font-family="'JetBrains Mono', 'Fira Code', monospace"
+            font-weight="600" font-size="11" fill="#a855f7" text-anchor="middle">Immutable Ledger</text>
+    </g>
+    <!-- Badge Compliance -->
+    <g transform="translate(590, 0)" filter="url(#glowSoft)">
+      <rect x="0" y="0" width="130" height="30" rx="15" fill="#0f172a" stroke="#ec4899" stroke-width="1.5" opacity="0.95"/>
+      <text x="65" y="20" font-family="'JetBrains Mono', 'Fira Code', monospace"
+            font-weight="600" font-size="11" fill="#ec4899" text-anchor="middle">Banking Compliance</text>
+    </g>
+    <!-- Badge Zero Deps -->
+    <g transform="translate(730, 0)" filter="url(#glowSoft)">
+      <rect x="0" y="0" width="145" height="30" rx="15" fill="url(#primaryGradient)" opacity="0.15" stroke="url(#primaryGradient)" stroke-width="2"/>
+      <text x="72.5" y="20" font-family="'JetBrains Mono', 'Fira Code', monospace"
+            font-weight="700" font-size="12" fill="url(#primaryGradient)" text-anchor="middle">Zero Dependencies</text>
+    </g>
+  </g>
+
+  <!-- Stats bar -->
+  <g transform="translate(180, 295)" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="13" font-weight="600">
+    <g>
+      <text x="0" y="0" fill="#0ea5e9">4</text>
+      <text x="18" y="0" fill="#64748b">  Camadas Arquiteturais</text>
+    </g>
+    <g transform="translate(220, 0)">
+      <text x="0" y="0" fill="#fbbf24">3</text>
+      <text x="18" y="0" fill="#64748b">  Saques Diários</text>
+    </g>
+    <g transform="translate(400, 0)">
+      <text x="0" y="0" fill="#10b981">R$ 500,00</text>
+      <text x="70" y="0" fill="#64748b">  Teto/Saque</text>
+    </g>
+    <g transform="translate(550, 0)">
+      <text x="0" y="0" fill="#a855f7">100%</text>
+      <text x="42" y="0" fill="#64748b">  Cobertura Testes</text>
+    </g>
+    <g transform="translate(740, 0)">
+      <text x="0" y="0" fill="#ec4899">MIT</text>
+      <text x="30" y="0" fill="#64748b">  Licensed</text>
+    </g>
+  </g>
+
+  <!-- Barra decorativa inferior com gradiente animado -->
+  <g transform="translate(0, 340)">
+    <rect x="0" y="0" width="1280" height="20" fill="url(#accentGradient)" opacity="0.1"/>
+    <rect x="0" y="0" width="1280" height="2" fill="url(#accentGradient)" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Barras verticais decorativas laterais -->
+  <g opacity="0.35">
+    <rect x="30" y="50" width="3" height="240" fill="url(#primaryGradient)" rx="1.5">
+      <animate attributeName="height" values="240;180;240" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="1247" y="70" width="3" height="220" fill="url(#goldGradient)" rx="1.5">
+      <animate attributeName="height" values="220;160;220" dur="3.5s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+</svg>
